@@ -31,12 +31,12 @@ The MVP supports separate private accounts. It does not include teams, mentors, 
 
 - Registration, login, and logout
 - User-owned skill CRUD
-- Built-in skill categories (category model to be confirmed before detailed design)
+- Built-in skill categories selected from an application-provided list; users cannot create or manage categories
 - Current and target proficiency levels: Beginner, Intermediate, Advanced, Expert
 - Learning goal and optional deadline
 - Progress percentage between 0 and 100
-- Dashboard summary
-- Search by skill name and filter by category
+- Dashboard with total active skills, completed skills, and average progress
+- Search by skill name and filter by built-in category; both are required for the MVP
 - Validation, error states, and per-user data isolation
 - Automated tests for core behavior
 - Setup and deployment documentation
@@ -45,6 +45,7 @@ The MVP supports separate private accounts. It does not include teams, mentors, 
 
 - AI-based recommendations
 - Integrations with external course platforms
+- Learning-resource link management (candidate for a later iteration)
 - Gamification, badges, and leaderboards
 - Teams, mentors, and social features
 - Progress history and advanced analytics
@@ -58,6 +59,9 @@ The MVP supports separate private accounts. It does not include teams, mentors, 
 - An overdue deadline does not automatically mean a goal has failed.
 - Dashboard summaries are calculated from the user's active skills only.
 - A skill with 100% progress counts as completed.
+- The dashboard displays three core statistics: total active skills, completed skills, and average progress across active skills.
+- When a user has no active skills, the dashboard shows a helpful empty state instead of misleading statistics.
+- Skill categories are selected from a built-in list; user-created categories are outside the MVP.
 
 ## 7. Technology Direction
 
@@ -70,7 +74,7 @@ The final authentication approach and deployment provider will be selected durin
 
 ## 8. Success Criteria
 
-The MVP will be considered successful when a user can securely create an account, manage their own skills, update progress, and see correct dashboard summaries, with core behavior tested and deployment instructions documented.
+The MVP will be considered successful when a user can securely create an account, manage their own skills, search and filter their skills, update progress, and see correct dashboard summaries, with core behavior tested and deployment instructions documented.
 
 ## 9. Scope Change Policy
 
