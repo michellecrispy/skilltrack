@@ -52,16 +52,13 @@ This document records important decisions and their rationale. Decisions marked 
 
 **Rationale:** Clear boundaries make later design decisions easier to review and reduce accidental growth of the MVP.
 
-## DEC-007 — Category Model
+## DEC-007 — Built-in Skill Categories
 
-**Status:** Open
+**Status:** Accepted for MVP scope
 
-**Decision needed:** Choose built-in categories, user-created categories, or a hybrid model before finalizing detailed use cases and data design.
+**Decision:** Users select a skill category from an application-provided built-in list. Users cannot create, edit, or delete categories in the MVP.
 
-**Options under consideration:**
-- Built-in categories: simpler initial scope and consistent filtering.
-- User-created categories: more flexible, but requires category management and additional data rules.
-- Hybrid categories: flexible, but adds complexity to the MVP.
+**Rationale:** This keeps category management out of the initial scope and supports consistent category filtering. The exact category catalogue will be decided during technical and UI design.
 
 ## DEC-008 — Authentication Strategy
 
