@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 1 — Project scope and requirements.
+**Current status:** Phase 2 — Use cases and user flows (in progress).
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -9,8 +9,8 @@ This roadmap describes the intended sequence. Dates and completion status will b
 - [x] Create the public GitHub repository
 - [x] Draft project scope and MVP boundaries
 - [x] Draft functional and non-functional requirements
-- [ ] Confirm category model
-- [ ] Review and approve requirements baseline
+- [x] Confirm category model
+- [x] Review and approve requirements baseline
 
 **Deliverables:** README, project scope, requirements, roadmap, and decision log.
 
