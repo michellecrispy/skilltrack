@@ -18,8 +18,8 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 - [x] Identify actors and system boundaries
 - [x] Create and review the use case diagram
-- [ ] Review and accept descriptions for key use cases (updated with separate login after registration, 0% empty-dashboard average, and delete confirmation)
-- [ ] Map primary and alternate user flows
+- [x] Review and accept descriptions for key use cases
+- [ ] Map primary and alternate user flows (next task)
 - [ ] Review flows against the requirements
 
 **Deliverables:** accepted use case diagram, reviewed use case descriptions, and user-flow documentation.
