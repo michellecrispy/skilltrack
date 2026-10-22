@@ -1,6 +1,6 @@
 # Phase 2.3 — Use Case Descriptions
 
-**Status:** Updated for review  
+**Status:** Reviewed and accepted  
 **Related documents:** [Actors and System Boundary](01-actors-and-system-boundary.md), [Use Case Diagram](02-use-case-diagram.md), [Requirements](../requirements.md), [Decision Log](../decisions.md)
 
 This document describes the MVP use cases. The create/edit skill form groups category, current proficiency, target proficiency, learning goal, and optional deadline in one form. Learning progress is tracked separately as an integer percentage from 0 to 100.
