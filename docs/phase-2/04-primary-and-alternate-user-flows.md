@@ -1,9 +1,9 @@
 # Phase 2.4 — Primary and Alternate User Flows
 
-**Status:** Draft for review  
+**Status:** Reviewed and accepted for MVP scope  
 **Related documents:** [Actors and System Boundary](01-actors-and-system-boundary.md), [Use Case Diagram](02-use-case-diagram.md), [Use Case Descriptions](03-use-case-descriptions.md), [Requirements](../requirements.md)
 
-This document maps the main journeys through the SkillTrack MVP. These flows are intended to validate navigation and expected behavior before wireframes and technical design begin.
+This document maps the main journeys through the SkillTrack MVP. These flows validate navigation and expected behavior before wireframes and technical design begin.
 
 ## Flow 1 — Register, then log in
 
@@ -106,7 +106,7 @@ This document maps the main journeys through the SkillTrack MVP. These flows are
 
 ## Review checklist
 
-- [ ] Confirm the primary journeys match the accepted use case descriptions.
-- [ ] Confirm alternate flows cover validation, empty states, service failures, and expired sessions where relevant.
-- [ ] Confirm ownership and authentication rules apply consistently.
-- [ ] Confirm no flow introduces features outside the MVP scope.
+- [x] Confirm the primary journeys match the accepted use case descriptions.
+- [x] Confirm alternate flows cover validation, empty states, service failures, and expired sessions where relevant.
+- [x] Confirm ownership and authentication rules apply consistently.
+- [x] Confirm no flow introduces features outside the MVP scope.
