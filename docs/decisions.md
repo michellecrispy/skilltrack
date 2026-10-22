@@ -67,3 +67,11 @@ This document records important decisions and their rationale. Decisions marked 
 **Decision needed:** Select an appropriate session-based or token-based authentication approach during technical design.
 
 **Security constraints:** passwords must be hashed; secrets must not be committed; protected API operations must enforce authentication and ownership checks. CORS is not an authorization mechanism.
+
+## DEC-009 — Account Access Workflows for the MVP
+
+**Status:** Accepted for MVP scope
+
+**Decision:** Include registration, login, and logout. Exclude password reset, account recovery, and email verification from the MVP.
+
+**Rationale:** Keep the first release focused on the essential authentication lifecycle and secure access to private skill data. Additional account workflows can be considered after the core MVP is stable.
