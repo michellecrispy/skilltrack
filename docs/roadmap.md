@@ -16,7 +16,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 ## Phase 2 — Use Cases and User Flows
 
-- [ ] Identify actors and system boundaries
+- [x] Identify actors and system boundaries
 - [ ] Create the use case diagram
 - [ ] Write descriptions for key use cases
 - [ ] Map primary and alternate user flows
