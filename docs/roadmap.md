@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 2 — Use cases and user flows (in progress).
+**Current status:** Phase 2 complete — ready to begin Phase 3 technical and UI design.
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -19,10 +19,10 @@ This roadmap describes the intended sequence. Dates and completion status will b
 - [x] Identify actors and system boundaries
 - [x] Create and review the use case diagram
 - [x] Review and accept descriptions for key use cases
-- [ ] Map primary and alternate user flows (next task)
-- [ ] Review flows against the requirements
+- [x] Map primary and alternate user flows
+- [x] Review flows against the requirements
 
-**Deliverables:** accepted use case diagram, reviewed use case descriptions, and user-flow documentation.
+**Deliverables:** accepted use case diagram, reviewed use case descriptions, and accepted user-flow documentation.
 
 ## Phase 3 — Technical and UI Design
 
