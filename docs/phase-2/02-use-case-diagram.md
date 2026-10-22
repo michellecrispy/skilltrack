@@ -1,9 +1,9 @@
 # Phase 2.2 — Use Case Diagram
 
-**Status:** Draft for review  
-**Related documents:** [Actors and System Boundary](01-actors-and-system-boundary.md), [Requirements](../requirements.md), [Decision Log](../decisions.md)
+**Status:** Reviewed and accepted for MVP scope  
+**Related documents:** [Actors and System Boundary](01-actors-and-system-boundary.md), [Requirements](../requirements.md), [Decision Log](../decisions.md), [Use Case Descriptions](03-use-case-descriptions.md)
 
-This diagram is a use-case overview for the MVP. It uses a Mermaid flowchart to keep the diagram renderable in GitHub Markdown; the oval nodes represent use cases and the subgraph represents the SkillTrack system boundary.
+This diagram is the accepted use-case overview for the MVP. It uses a Mermaid flowchart to keep the diagram renderable in GitHub Markdown; the oval nodes represent use cases and the subgraph represents the SkillTrack system boundary.
 
 ```mermaid
 flowchart LR
@@ -71,17 +71,20 @@ flowchart LR
 | UC-13 | Filter skills by category | Individual Learner | FR-12 |
 | UC-14 | View dashboard summaries | Individual Learner | FR-15 |
 
-## Diagram Notes
+## Accepted Scope Notes
 
+- The create/edit skill form groups the skill name, built-in category, current and target proficiency, learning goal, and optional deadline.
+- The dashboard displays exactly three core statistics: total active skills, completed skills (progress = 100%), and arithmetic average progress. Charts and advanced analytics are not part of the MVP.
 - Password reset, account recovery, and email verification are excluded from the MVP.
-- All skill-related use cases require authentication and must enforce ownership on the backend.
-- Search and filtering must operate only on the authenticated user's own skills.
-- The category, proficiency, goal, and deadline use cases are shown separately to clarify requirements, although they may appear as fields in the create/edit skill form.
-- The dashed relationships are explanatory rather than strict UML `include` or `extend` semantics. The detailed use case descriptions will define required versus optional behavior more precisely.
+- All skill-related use cases require authentication and backend ownership enforcement.
+- Search and filtering operate only on the authenticated user's own skills.
+- The dashed relationships are explanatory rather than strict UML `include` or `extend` semantics; detailed behavior is specified in the use case descriptions.
 
 ## Review Checklist
 
-- [ ] Confirm the actors and use cases match the agreed MVP scope.
-- [ ] Confirm that registration, login, and logout are the only account-access workflows shown.
-- [ ] Check that no use case exposes another user's data.
-- [ ] Review requirement mappings before marking the diagram complete.
+- [x] Confirm the actors and use cases match the agreed MVP scope.
+- [x] Confirm that registration, login, and logout are the only account-access workflows shown.
+- [x] Check that no use case exposes another user's data.
+- [x] Review requirement mappings before marking the diagram complete.
+- [x] Confirm category, proficiency, learning goal, and deadline are grouped in the create/edit form.
+- [x] Confirm the dashboard is limited to the three core statistics.
