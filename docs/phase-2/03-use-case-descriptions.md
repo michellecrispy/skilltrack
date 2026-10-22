@@ -1,6 +1,6 @@
 # Phase 2.3 — Use Case Descriptions
 
-**Status:** Draft for review  
+**Status:** Updated for review  
 **Related documents:** [Actors and System Boundary](01-actors-and-system-boundary.md), [Use Case Diagram](02-use-case-diagram.md), [Requirements](../requirements.md), [Decision Log](../decisions.md)
 
 This document describes the MVP use cases. The create/edit skill form groups category, current proficiency, target proficiency, learning goal, and optional deadline in one form. Learning progress is tracked separately as an integer percentage from 0 to 100.
@@ -14,9 +14,9 @@ This document describes the MVP use cases. The create/edit skill form groups cat
 2. The visitor enters the required registration details.
 3. SkillTrack validates the input and checks that the account can be created.
 4. SkillTrack securely stores the account credentials, with the password hashed.
-5. SkillTrack confirms successful registration and provides a path to log in.
+5. SkillTrack confirms successful registration and directs the visitor to the login page. The visitor must log in separately; registration does not automatically establish an authenticated session.
 **Alternate flows:** Required fields are missing or invalid; the email/account identifier is already registered; registration fails due to a server error. SkillTrack explains the problem without exposing sensitive details.  
-**Postconditions:** A new account exists. Registration does not automatically imply an authenticated session unless that behavior is explicitly chosen during implementation.
+**Postconditions:** A new account exists, but the visitor remains unauthenticated until they complete the login flow.
 
 ## UC-02 — Log in
 
@@ -169,7 +169,7 @@ This document describes the MVP use cases. The create/edit skill form groups cat
 1. The learner opens the dashboard.
 2. SkillTrack calculates and displays exactly three core statistics: total active skills, completed skills (progress equals 100%), and arithmetic average progress across the learner's skills.
 3. SkillTrack handles the zero-skill case without dividing by zero.
-**Alternate flows:** If the learner has no skills, SkillTrack displays zero active skills, zero completed skills, and a clearly defined empty/zero average-progress state.  
+**Alternate flows:** If the learner has no skills, SkillTrack displays 0 active skills, 0 completed skills, and 0% average progress. The calculation must handle this case without dividing by zero.  
 **Postconditions:** The learner sees a summary of only their own data. Charts and advanced analytics are outside the MVP.
 
 ## Cross-cutting rules
