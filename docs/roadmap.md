@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 2 complete — ready to begin Phase 3 technical and UI design.
+**Current status:** Phase 3 — Technical and UI Design (in progress).
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -26,14 +26,14 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 ## Phase 3 — Technical and UI Design
 
-- [ ] Define application architecture
+- [ ] Define application architecture (draft created; awaiting review)
 - [ ] Design database entities and relationships
 - [ ] Decide authentication and session/token strategy
 - [ ] Define API endpoints and validation contracts
 - [ ] Draft wireframes and responsive UI behavior
 - [ ] Record significant decisions
 
-**Deliverables:** architecture overview, data model, API specification, and wireframes.
+**Deliverables:** reviewed architecture overview, data model, API specification, and wireframes.
 
 ## Phase 4 — Project Foundation
 
