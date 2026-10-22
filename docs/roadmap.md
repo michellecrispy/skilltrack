@@ -17,12 +17,12 @@ This roadmap describes the intended sequence. Dates and completion status will b
 ## Phase 2 — Use Cases and User Flows
 
 - [x] Identify actors and system boundaries
-- [ ] Create the use case diagram
-- [ ] Write descriptions for key use cases
+- [x] Create and review the use case diagram
+- [ ] Review and accept descriptions for key use cases
 - [ ] Map primary and alternate user flows
 - [ ] Review flows against the requirements
 
-**Deliverables:** use case diagram, use case descriptions, and user-flow documentation.
+**Deliverables:** accepted use case diagram, reviewed use case descriptions, and user-flow documentation.
 
 ## Phase 3 — Technical and UI Design
 
