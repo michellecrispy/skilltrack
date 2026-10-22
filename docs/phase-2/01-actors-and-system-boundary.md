@@ -1,7 +1,7 @@
 # Phase 2.1 — Actors and System Boundary
 
-**Status:** Draft for review  
-**Related baseline:** [Project Scope](../project-scope.md), [Requirements](../requirements.md)
+**Status:** Reviewed and accepted  
+**Related baseline:** [Project Scope](../project-scope.md), [Requirements](../requirements.md), [Decision Log](../decisions.md)
 
 ## 1. Purpose
 
@@ -34,8 +34,8 @@ For the MVP, no administrator, mentor, team member, external course platform, or
 ## 4. System Boundary
 
 **Inside the SkillTrack system boundary:**
-- Registration and authentication workflows.
-- Authorization and per-user data ownership checks.
+- Registration, login, and logout.
+- Authentication, authorization, and per-user data ownership checks.
 - Skill CRUD operations.
 - Built-in category selection and validation.
 - Current and target proficiency values.
@@ -44,13 +44,13 @@ For the MVP, no administrator, mentor, team member, external course platform, or
 - Dashboard statistics and empty states.
 - Input validation, user-facing errors, and relevant application responses.
 
-**Outside the SkillTrack system boundary:**
+**Outside the SkillTrack system boundary for the MVP:**
+- Password reset, account recovery, and email verification.
 - The learner's actual study activities and decisions about how to learn.
 - The correctness of a user's self-assessed proficiency level.
 - Creation or management of the built-in category catalogue by end users.
 - External course-platform integrations and learning-resource management.
 - Hosting-provider operations and infrastructure administration.
-- Email delivery, password reset, and email verification workflows, unless explicitly added to scope later.
 
 ## 5. Actor Goals
 
@@ -59,6 +59,7 @@ For the MVP, no administrator, mentor, team member, external course platform, or
 | Unauthenticated Visitor | Create an account or sign in to an existing account. |
 | Individual Learner | Maintain a private, organized view of skills and learning goals. |
 | Individual Learner | Understand progress through skill-level details and dashboard summaries. |
+| Individual Learner | End their authenticated access by logging out. |
 
 ## 6. Boundary and Security Rules
 
@@ -68,18 +69,18 @@ For the MVP, no administrator, mentor, team member, external course platform, or
 - A user cannot read, update, or delete another user's skills by changing an identifier or request.
 - Users can select only categories from the application's built-in category list in the MVP.
 - Logging out ends the user's authenticated access according to the authentication mechanism selected during technical design.
+- Registration, login, and logout are the only account-access workflows in the MVP; password reset, account recovery, and email verification are excluded.
 
 ## 7. Assumptions and Open Questions
 
 - **Authentication mechanism:** session-based or token-based authentication remains open for Phase 3.
-- **Account recovery:** password reset and email verification are not currently in the MVP requirements.
 - **Built-in category catalogue:** the exact category names and whether the catalogue is static or stored as reference data will be decided during technical/data design.
 - **Skill deletion:** deleting a skill removes it from the active list; retention or soft-delete behavior has not been specified and should be clarified during technical design if needed.
 - **Dashboard wording:** “completed skill” means a skill whose learning-goal progress is 100%, not a claim that the user's overall proficiency is Expert.
 
 ## 8. Review Checklist
 
-- [ ] Confirm the actor list is sufficient for the MVP.
-- [ ] Confirm the system boundary does not accidentally include post-MVP features.
-- [ ] Resolve or carry forward the open questions into the relevant later phase.
-- [ ] After review, use this document as the basis for the use case diagram.
+- [x] Confirm the actor list is sufficient for the MVP.
+- [x] Confirm the system boundary does not accidentally include post-MVP features.
+- [x] Resolve or carry forward the open questions into the relevant later phase.
+- [x] Use this document as the basis for the use case diagram.
