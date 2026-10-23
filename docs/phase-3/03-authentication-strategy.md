@@ -1,6 +1,6 @@
 # Phase 3.3 — Authentication Strategy
 
-**Status:** Proposed for review  
+**Status:** Accepted for MVP scope  
 **Scope:** MVP registration, login, logout, browser session, and request protection. Password recovery, email verification, and third-party sign-in remain out of scope.
 
 ## Recommendation
@@ -45,6 +45,6 @@ The session record should contain: UUID ID, user UUID foreign key, token hash (u
 
 ## Acceptance checklist
 
-- [ ] Session strategy and lifetime are accepted.
-- [ ] Cookie, CSRF, and CORS safeguards are accepted.
-- [ ] Session persistence fields and user-deletion behavior are accepted.
+- [x] Session strategy and seven-day inactivity lifetime are accepted.
+- [x] Cookie, CSRF, and CORS safeguards are accepted.
+- [x] Session persistence fields and user-deletion behavior are accepted.
