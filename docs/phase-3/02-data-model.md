@@ -1,6 +1,6 @@
 # Phase 3.2 — Data Model
 
-**Status:** Draft for review  
+**Status:** Accepted for MVP scope  
 **Scope:** MVP entities, relationships, integrity rules, and persistence behavior. Authentication mechanism, API contracts, and production database choice remain separate design tasks.
 
 ## 1. Design goals
@@ -58,7 +58,7 @@ A user may have zero or more skills. Every skill belongs to exactly one user. Th
 | `created_at` | Timestamp | Required; stored and interpreted in UTC. |
 | `updated_at` | Timestamp | Required; refreshed when account data changes. |
 
-The unique constraint on `normalized_email` is the authoritative duplicate-account check; application validation should translate a conflict into a clear response.
+The unique constraint on `normalized_email` is the authoritative duplicate-account check; application validation should translate a conflict into a clear response. Trim leading and trailing whitespace and normalize case before deriving this value.
 
 ### Skill
 
@@ -82,7 +82,7 @@ Proficiency values and goal progress are separate fields with separate meanings.
 
 The MVP does not need a user-managed `Category` table. The application owns the category catalogue and validates each `Skill.category` value against it. Persist a stable category key rather than a display label so labels can be changed without rewriting skill records.
 
-The exact catalogue and category keys remain to be confirmed during technical/UI design. If categories later need admin management, localization, or metadata, a dedicated table can be introduced through a migration.
+The accepted MVP catalogue is: Technology, Languages, Arts and Design, Business and Finance, Communication, Education and Academics, Health and Fitness, Sports, Culture and Humanities, Personal Development, and Spirituality. Users cannot enter custom categories, so there is no “Other” category. Store stable category keys; the backend validates keys against this fixed catalogue. If categories later need admin management, localization, or metadata, a dedicated table can be introduced through a migration.
 
 ## 5. Integrity and deletion rules
 
@@ -93,7 +93,7 @@ The exact catalogue and category keys remain to be confirmed during technical/UI
 - Validate category keys against the built-in catalogue in the backend before persistence.
 - Use database constraints where supported by the chosen ORM and migration tooling; keep backend validation as the source of user-facing validation errors.
 - A skill at 100% is completed; no separate completion flag is needed.
-- The MVP has no archive or restore use case. This draft treats delete as permanent removal, and dashboard “active skills” as the user's remaining skill records. Confirm this interpretation before finalizing.
+- The MVP has no archive or restore use case. Delete permanently removes the skill record, and dashboard “active skills” means the user's remaining skill records.
 
 ## 6. Indexes and dashboard calculations
 
@@ -112,14 +112,14 @@ A future PostgreSQL move will require applying/adapting migrations, transferring
 ## 8. Review questions
 
 - Confirm whether deleting a skill permanently removes it or moves it to an archive/trash state.
-- Confirm the built-in category keys and labels.
-- Confirm UUID identifiers and the proposed account email normalization behavior.
+- Use the accepted built-in catalogue: Technology, Languages, Arts and Design, Business and Finance, Communication, Education and Academics, Health and Fitness, Sports, Culture and Humanities, Personal Development, and Spirituality. No custom or “Other” category is available.
+- Use UUID identifiers for users and skills. Normalize account email by trimming leading/trailing whitespace and comparing case-insensitively.
 - Confirm this two-entity MVP model before API contracts are designed.
 
 ## 9. Acceptance checklist
 
-- [ ] User and Skill fields cover the approved MVP requirements.
-- [ ] User-to-skill ownership and deletion behavior are accepted.
-- [ ] Built-in category storage and validation approach are accepted.
-- [ ] Progress, proficiency, and dashboard rules are represented correctly.
-- [ ] SQLite-first and future PostgreSQL migration constraints are documented.
+- [x] User and Skill fields cover the approved MVP requirements.
+- [x] User-to-skill ownership and permanent deletion behavior are accepted.
+- [x] Built-in category storage and validation approach are accepted.
+- [x] Progress, proficiency, and dashboard rules are represented correctly.
+- [x] SQLite-first and future PostgreSQL migration constraints are documented.
