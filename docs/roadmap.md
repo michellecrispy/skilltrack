@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.2 data model draft ready for review.
+**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.2 data model accepted.
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -27,7 +27,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 ## Phase 3 — Technical and UI Design
 
 - [x] Phase 3.1 — Define and accept application architecture (React → FastAPI → SQLite for local development)
-- [ ] Phase 3.2 — Review and accept the database entity and relationship design (draft: [Data Model](phase-3/02-data-model.md))
+- [x] Phase 3.2 — Design and accept database entities and relationships ([Data Model](phase-3/02-data-model.md))
 - [ ] Decide authentication and session/token strategy
 - [ ] Define API endpoints and validation contracts
 - [ ] Draft wireframes and responsive UI behavior
@@ -35,7 +35,9 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.1 complete:** Architecture review accepted. SQLite is selected for local development and the initial MVP; PostgreSQL remains a production option subject to hosting needs. Migration guidance is recorded in DEC-003.
 
-**Current task:** Review the Phase 3.2 data model, especially deletion behavior and the built-in category catalogue, before finalizing it.
+**Phase 3.2 complete:** Permanent skill deletion, UUID identifiers, normalized email, and the fixed built-in category catalogue are accepted.
+
+**Next task:** Decide the authentication and session/token strategy.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
