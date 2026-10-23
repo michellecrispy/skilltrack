@@ -29,7 +29,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 - [x] Phase 3.1 — Define and accept application architecture (React → FastAPI → SQLite for local development)
 - [x] Phase 3.2 — Design and accept database entities and relationships ([Data Model](phase-3/02-data-model.md))
 - [x] Phase 3.3 — Define and accept authentication and session strategy ([Authentication Strategy](phase-3/03-authentication-strategy.md))
-- [ ] Phase 3.4 — Define API endpoints and validation contracts
+- [ ] Phase 3.4 — Review and accept API endpoints and validation contracts ([API Specification](phase-3/04-api-specification.md))
 - [ ] Draft wireframes and responsive UI behavior
 - [ ] Record significant decisions
 
@@ -39,7 +39,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.3 complete:** Server-managed cookie sessions are accepted, with a seven-day inactivity lifetime, token-hash persistence, logout revocation, CSRF protection, and explicit origin/CORS controls.
 
-**Next task:** Phase 3.4 — Define API endpoints and validation contracts.
+**Current task:** Review the Phase 3.4 API draft, especially validation limits, pagination defaults, and session creation behavior.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
