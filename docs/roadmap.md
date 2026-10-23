@@ -26,14 +26,18 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 ## Phase 3 — Technical and UI Design
 
-- [ ] Define application architecture (draft created; awaiting review)
-- [ ] Design database entities and relationships
+- [x] Phase 3.1 — Define and accept application architecture (React → FastAPI → SQLite for local development)
+- [ ] Phase 3.2 — Design database entities and relationships
 - [ ] Decide authentication and session/token strategy
 - [ ] Define API endpoints and validation contracts
 - [ ] Draft wireframes and responsive UI behavior
 - [ ] Record significant decisions
 
-**Deliverables:** reviewed architecture overview, data model, API specification, and wireframes.
+**Phase 3.1 complete:** Architecture review accepted. SQLite is selected for local development and the initial MVP; PostgreSQL remains a production option subject to hosting needs. Migration guidance is recorded in DEC-003.
+
+**Next task:** Phase 3.2 — Design database entities and relationships.
+
+**Deliverables:** accepted architecture overview, data model, API specification, and wireframes.
 
 ## Phase 4 — Project Foundation
 
