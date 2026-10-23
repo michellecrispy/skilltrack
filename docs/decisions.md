@@ -20,13 +20,15 @@ This document records important decisions and their rationale. Decisions marked 
 
 ## DEC-003 — SQLite for the Initial MVP
 
-**Status:** Proposed, conditional on hosting
+**Status:** Accepted for local development; conditional for production hosting
 
-**Decision:** Start with SQLite to keep local development and the initial MVP simple.
+**Decision:** Use SQLite for local development and the initial MVP. Evaluate PostgreSQL for production if hosting cannot guarantee persistent SQLite storage or operational needs favor a managed database.
 
 **Rationale:** The project has a small initial scope and does not require a separate database server during early development.
 
-**Trade-off:** Deployment must provide persistent storage. If the selected hosting environment cannot guarantee SQLite persistence, or the project outgrows this setup, evaluate PostgreSQL before public release.
+**Migration strategy:** Keep database access behind a persistence layer/ORM, minimize database-specific SQL, and use versioned migrations. This should make a later switch to PostgreSQL manageable, but it is not automatic: adapt and test schema migrations, migrate existing data, and verify application behavior against PostgreSQL before deployment.
+
+**Trade-off:** Production deployment must provide persistent storage. Reassess the database choice before public release based on hosting and operational requirements.
 
 ## DEC-004 — Individual Accounts and Private Data
 
