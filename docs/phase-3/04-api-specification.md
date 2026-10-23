@@ -29,7 +29,7 @@
 
 | Method | Path | Auth | Purpose |
 | --- | --- | --- | --- |
-| POST | `/auth/register` | No | Create an account and start a session. |
+| POST | `/auth/register` | No | Create an account; the user logs in separately. |
 | POST | `/auth/login` | No | Verify credentials and start a session. |
 | POST | `/auth/logout` | Yes | Revoke the current session and clear its cookie. |
 | GET | `/auth/me` | Yes | Return the authenticated user's public account fields. |
@@ -54,7 +54,7 @@ Request:
 }
 ```
 
-Normalize email by trimming surrounding whitespace and comparing case-insensitively. Store only its normalized form for uniqueness/lookups and the original normalized display form as appropriate. Hash the password with a password-hashing algorithm. On success, create a session and set the opaque token only in the HTTP-only cookie; return public user fields, never a password or token.
+Normalize email by trimming surrounding whitespace and comparing case-insensitively. Store only its normalized form for uniqueness/lookups and the original normalized display form as appropriate. Hash the password with a password-hashing algorithm. On success, create the account but do not start a session. Return public user fields, never a password or token. The user must log in separately.
 
 Responses: `201 Created`, `409 Conflict` for an already registered normalized email, `422 Unprocessable Content` for invalid fields.
 
@@ -209,7 +209,7 @@ The proposed text-length limits are API design defaults for review and can be ad
 - Confirm the endpoint set, pagination defaults, and response shapes.
 - Confirm proposed name and learning-goal length limits.
 - Confirm that empty-dashboard progress is returned as `0`.
-- Decide whether login/register should establish a session immediately; this draft follows the earlier separate-action decision and starts a session upon login only.
+- Registration creates the account without authenticating the user; a separate login request creates the session, as previously accepted.
 
 ## 11. Acceptance checklist
 
