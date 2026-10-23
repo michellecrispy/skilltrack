@@ -64,11 +64,15 @@ This document records important decisions and their rationale. Decisions marked 
 
 ## DEC-008 — Authentication Strategy
 
-**Status:** Open
+**Status:** Proposed for review
 
-**Decision needed:** Select an appropriate session-based or token-based authentication approach during technical design.
+**Decision:** Use server-managed sessions with an opaque random token in an HTTP-only cookie for the React browser client and FastAPI backend. Persist only a hash of each token so sessions can be revoked on logout.
 
-**Security constraints:** passwords must be hashed; secrets must not be committed; protected API operations must enforce authentication and ownership checks. CORS is not an authorization mechanism.
+**Rationale:** This keeps the MVP web authentication flow simple and avoids exposing bearer tokens to JavaScript or adding a refresh-token lifecycle.
+
+**Security constraints:** Hash passwords with a password-hashing algorithm; use `HttpOnly`, `SameSite=Lax`, and `Secure` cookies in HTTPS environments; add CSRF protection for state-changing requests; validate origins; configure explicit CORS origins; and enforce authentication and ownership on the backend. CORS is not an authorization mechanism.
+
+**Open for review:** Proposed session lifetime is seven days of inactivity. Detailed flow and trade-offs are in [Phase 3.3 — Authentication Strategy](phase-3/03-authentication-strategy.md).
 
 ## DEC-009 — Account Access Workflows for the MVP
 
