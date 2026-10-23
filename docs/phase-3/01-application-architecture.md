@@ -1,6 +1,6 @@
 # Phase 3.1 — Application Architecture
 
-**Status:** Draft for review  
+**Status:** Accepted  
 **Scope:** MVP architecture proposal; authentication details, database schema, API contracts, and deployment provider remain separate design tasks.
 
 ## 1. Architecture goals
@@ -46,10 +46,12 @@ The diagram is logical rather than a deployment topology. Authentication/authori
 
 ### Persistence layer
 
-- Start with SQLite for local development and the initial MVP, subject to persistent-storage requirements.
+- Use SQLite for local development and the initial MVP.
 - Store users and their skills with an explicit ownership relationship.
-- Access persistence through backend code rather than allowing the frontend to connect directly to the database.
-- Reassess PostgreSQL before deployment if the hosting environment cannot guarantee persistent SQLite storage or operational requirements favor a managed database.
+- Keep database access behind a backend persistence layer/ORM so database-specific details stay out of business logic.
+- Minimize database-specific SQL and use versioned migrations to manage schema changes.
+- A later move to PostgreSQL should be manageable with this separation, but it still requires adapting and testing migrations, transferring existing data, and verifying schema and application behavior.
+- Reassess PostgreSQL before production deployment if the hosting environment cannot guarantee persistent SQLite storage or operational requirements favor a managed database.
 
 ## 4. Main request path
 
@@ -102,7 +104,7 @@ These belong to subsequent Phase 3 design tasks and should not be inferred as fi
 
 ## 8. Review checklist
 
-- [ ] Confirm React, FastAPI, and the API boundary reflect the intended MVP.
-- [ ] Confirm backend ownership enforcement and security responsibilities are clear.
-- [ ] Confirm SQLite is an initial choice conditional on persistent hosting.
-- [ ] Confirm open decisions remain open for their dedicated design tasks.
+- [x] Confirm React, FastAPI, and the API boundary reflect the intended MVP.
+- [x] Confirm backend ownership enforcement and security responsibilities are clear.
+- [x] Confirm SQLite is the initial database for local development and MVP.
+- [x] Confirm open decisions remain open for their dedicated design tasks.
