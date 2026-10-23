@@ -1,7 +1,7 @@
 # Phase 3.2 — Data Model
 
 **Status:** Accepted for MVP scope  
-**Scope:** MVP entities, relationships, integrity rules, and persistence behavior. Authentication mechanism, API contracts, and production database choice remain separate design tasks.
+**Scope:** MVP entities, relationships, integrity rules, and persistence behavior. The accepted Phase 3.3 authentication strategy adds a server-managed session entity to the original User and Skill model.
 
 ## 1. Design goals
 
@@ -16,6 +16,7 @@
 ```mermaid
 erDiagram
     USER ||--o{ SKILL : owns
+    USER ||--o{ USER_SESSION : has
 
     USER {
         uuid id PK
@@ -25,6 +26,15 @@ erDiagram
         string password_hash
         datetime created_at
         datetime updated_at
+    }
+
+    USER_SESSION {
+        uuid id PK
+        uuid user_id FK
+        string token_hash UK
+        datetime created_at
+        datetime expires_at
+        datetime last_seen_at
     }
 
     SKILL {
@@ -42,7 +52,7 @@ erDiagram
     }
 ```
 
-A user may have zero or more skills. Every skill belongs to exactly one user. The API must scope skill reads, updates, and deletes to the authenticated user.
+A user may have zero or more skills and sessions. Every skill and session belongs to exactly one user. The API must scope skill reads, updates, and deletes to the authenticated user.
 
 ## 3. Entity fields
 
@@ -59,6 +69,19 @@ A user may have zero or more skills. Every skill belongs to exactly one user. Th
 | `updated_at` | Timestamp | Required; refreshed when account data changes. |
 
 The unique constraint on `normalized_email` is the authoritative duplicate-account check; application validation should translate a conflict into a clear response. Trim leading and trailing whitespace and normalize case before deriving this value.
+
+### UserSession
+
+| Field | Type | Rules |
+| --- | --- | --- |
+| `id` | UUID | Primary key. |
+| `user_id` | UUID | Required foreign key to `User.id`; index this field. |
+| `token_hash` | Text | Required and unique; hash of the opaque cookie token. Never persist the raw token. |
+| `created_at` | Timestamp | Required; stored and interpreted in UTC. |
+| `expires_at` | Timestamp | Required; session is invalid at or after this time. |
+| `last_seen_at` | Timestamp | Required; update after successful authenticated use to enforce the accepted seven-day inactivity lifetime. |
+
+Logout revokes the current session record. Permanently deleting a user cascades to their sessions.
 
 ### Skill
 
@@ -114,11 +137,11 @@ A future PostgreSQL move will require applying/adapting migrations, transferring
 - Confirm whether deleting a skill permanently removes it or moves it to an archive/trash state.
 - Use the accepted built-in catalogue: Technology, Languages, Arts and Design, Business and Finance, Communication, Education and Academics, Health and Fitness, Sports, Culture and Humanities, Personal Development, and Spirituality. No custom or “Other” category is available.
 - Use UUID identifiers for users and skills. Normalize account email by trimming leading/trailing whitespace and comparing case-insensitively.
-- Confirm this two-entity MVP model before API contracts are designed.
+- The Phase 3.2 User and Skill model is accepted; Phase 3.3 adds UserSession as required by the accepted cookie-session strategy.
 
 ## 9. Acceptance checklist
 
-- [x] User and Skill fields cover the approved MVP requirements.
+- [x] User, Skill, and (after Phase 3.3) UserSession fields cover the approved MVP requirements.
 - [x] User-to-skill ownership and permanent deletion behavior are accepted.
 - [x] Built-in category storage and validation approach are accepted.
 - [x] Progress, proficiency, and dashboard rules are represented correctly.
