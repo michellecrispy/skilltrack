@@ -28,7 +28,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 - [x] Phase 3.1 — Define and accept application architecture (React → FastAPI → SQLite for local development)
 - [x] Phase 3.2 — Design and accept database entities and relationships ([Data Model](phase-3/02-data-model.md))
-- [ ] Decide authentication and session/token strategy
+- [ ] Review and accept authentication and session strategy (proposal: [Authentication Strategy](phase-3/03-authentication-strategy.md))
 - [ ] Define API endpoints and validation contracts
 - [ ] Draft wireframes and responsive UI behavior
 - [ ] Record significant decisions
@@ -37,7 +37,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.2 complete:** Permanent skill deletion, UUID identifiers, normalized email, and the fixed built-in category catalogue are accepted.
 
-**Next task:** Decide the authentication and session/token strategy.
+**Current task:** Review the proposed server-managed cookie session strategy, including its seven-day inactivity lifetime, CSRF protection, and session persistence.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
