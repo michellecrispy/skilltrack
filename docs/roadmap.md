@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.2 data model accepted.
+**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.4 API specification accepted; wireframes next.
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -29,7 +29,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 - [x] Phase 3.1 — Define and accept application architecture (React → FastAPI → SQLite for local development)
 - [x] Phase 3.2 — Design and accept database entities and relationships ([Data Model](phase-3/02-data-model.md))
 - [x] Phase 3.3 — Define and accept authentication and session strategy ([Authentication Strategy](phase-3/03-authentication-strategy.md))
-- [ ] Phase 3.4 — Review and accept API endpoints and validation contracts ([API Specification](phase-3/04-api-specification.md))
+- [x] Phase 3.4 — Review and accept API endpoints and validation contracts ([API Specification](phase-3/04-api-specification.md))
 - [ ] Draft wireframes and responsive UI behavior
 - [ ] Record significant decisions
 
@@ -39,7 +39,9 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.3 complete:** Server-managed cookie sessions are accepted, with a seven-day inactivity lifetime, token-hash persistence, logout revocation, CSRF protection, and explicit origin/CORS controls.
 
-**Current task:** Review the Phase 3.4 API draft, especially validation limits, pagination defaults, and session creation behavior.
+**Phase 3.4 complete:** API endpoints, 120/2,000-character text limits, 8–128-character password policy, default 20 / maximum 100 pagination, CSRF bootstrap and validation, session refresh/expiry/logout, rate limits, and response/error contracts are accepted.
+
+**Current task:** Draft and review Phase 3.5 UI wireframes and responsive behavior.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
