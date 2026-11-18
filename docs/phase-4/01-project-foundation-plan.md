@@ -1,6 +1,8 @@
 # Phase 4.1 — Project Structure and Local Development Plan
 
-**Status:** Draft for review; no application scaffold or runtime checks have been performed.
+**Status:** Scaffold committed; GitHub file checks in progress. Local runtime checks are not yet verified.
+
+**Frontend decision:** React + TypeScript accepted by project owner.
 
 ## Goal
 Initialize a reproducible single-repository MVP with separate React frontend and FastAPI backend, SQLite local storage, and a documented path to PostgreSQL.
@@ -50,11 +52,19 @@ Directories shown are a proposal, not confirmation they exist. Python package ma
 
 ## Acceptance checks before Phase 4.1 completion
 
-- [ ] Confirm monorepo layout and TypeScript choice.
+- [x] Confirm monorepo layout and TypeScript choice.
 - [ ] Confirm runtime/tooling choices and versions.
-- [ ] Create frontend and backend scaffolds in the GitHub repository.
+- [x] Create minimal frontend and backend scaffolds in the GitHub repository (without authentication or CRUD).
 - [ ] Verify frontend dev server and FastAPI health route locally.
 - [ ] Document reproducible install/run commands and environment examples.
 - [ ] Confirm generated artifacts, secrets, and SQLite database files are ignored.
 
-**Note:** This is a design plan. Do not mark scaffolding or runtime checks complete until actual evidence is available.
+**Note:** This scaffold deliberately has no database migrations or authentication implementation yet. Actual runtime and dependency-install checks must be performed before marking Phase 4.1 accepted.
+
+## Local verification commands (to run)
+
+Frontend: `cd frontend && npm install && npm run typecheck && npm run lint && npm run build && npm run dev` (open `http://localhost:5173`).
+
+Backend: `cd backend && python -m venv .venv`, activate the environment, then `python -m pip install -e ".[dev]" && python -m pytest && uvicorn app.main:app --reload` (open `http://127.0.0.1:8000/health`).
+
+**Environment:** Node.js compatible with Vite 6 (Node 20.19+ or 22.12+ recommended), Python 3.11+. Confirm actual installed versions before declaring compatibility. Lockfiles still need generation and review.
