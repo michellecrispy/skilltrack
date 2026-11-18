@@ -1,0 +1,21 @@
+# frontend
+node_modules/
+dist/
+*.tsbuildinfo
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+# Local storage and secrets
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
