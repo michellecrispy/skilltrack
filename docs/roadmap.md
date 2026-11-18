@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.4 API specification accepted; wireframes next.
+**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.5 responsive UI design accepted; Phase 3 design complete.
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -30,8 +30,8 @@ This roadmap describes the intended sequence. Dates and completion status will b
 - [x] Phase 3.2 — Design and accept database entities and relationships ([Data Model](phase-3/02-data-model.md))
 - [x] Phase 3.3 — Define and accept authentication and session strategy ([Authentication Strategy](phase-3/03-authentication-strategy.md))
 - [x] Phase 3.4 — Review and accept API endpoints and validation contracts ([API Specification](phase-3/04-api-specification.md))
-- [ ] Draft wireframes and responsive UI behavior
-- [ ] Record significant decisions
+- [x] Phase 3.5 — Draft and accept wireframes and responsive UI behavior ([UI Wireframes](phase-3/05-ui-wireframes.md))
+- [x] Record significant decisions
 
 **Phase 3.1 complete:** Architecture review accepted. SQLite is selected for local development and the initial MVP; PostgreSQL remains a production option subject to hosting needs. Migration guidance is recorded in DEC-003.
 
@@ -41,7 +41,9 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.4 complete:** API endpoints, 120/2,000-character text limits, 8–128-character password policy, default 20 / maximum 100 pagination, CSRF bootstrap and validation, session refresh/expiry/logout, rate limits, and response/error contracts are accepted.
 
-**Current task:** Draft and review Phase 3.5 UI wireframes and responsive behavior.
+**Phase 3.5 complete:** Soft Productivity, desktop sidebar, compact mobile menu, desktop skill table/mobile cards, separate Create/Edit pages, responsive breakpoints, accessible dialogs, and loading/empty/error states are accepted.
+
+**Current task:** Phase 4 — Project Foundation: initialize frontend/backend, local environment, database migrations, linting, and tests.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
