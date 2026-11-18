@@ -1,7 +1,7 @@
 # Phase 3.5 — UI Wireframes and Responsive Behavior
 
 **Status:** Draft for review  
-**Scope:** MVP React browser interface, based on accepted Phase 3.1–3.4 contracts. This is a low-fidelity structure, not final visual styling.
+**Scope:** MVP React browser interface, based on accepted Phase 3.1–3.4 contracts. This is a low-fidelity structure, not final visual styling. **Visual direction selected:** Soft Productivity (user-selected; detailed layouts pending review).
 
 ## 1. Navigation and screen inventory
 
@@ -105,7 +105,7 @@ Delete requires a confirmation dialog naming the skill and clearly stating that 
 
 ## 5. Design decisions for review
 
-1. Approve the **Modern Minimalist Dashboard** visual direction.
+1. Soft Productivity is selected: light neutral background, sage/soft blue/peach accents, dark readable text, rounded cards and restrained shadows. Final contrast and states must meet accessibility requirements.
 2. Approve desktop top navigation and compact mobile navigation.
 3. Approve skill list/table on desktop and cards on mobile.
 4. Approve separate detail and create/edit screens rather than modals.
