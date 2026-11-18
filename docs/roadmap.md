@@ -1,6 +1,6 @@
 # Development Roadmap
 
-**Current status:** Phase 3 — Technical and UI Design (in progress); Phase 3.5 responsive UI design accepted; Phase 3 design complete.
+**Current status:** Phase 4 — Project Foundation (in progress); Phase 4.1 structure plan drafted for review.
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -43,7 +43,7 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 **Phase 3.5 complete:** Soft Productivity, desktop sidebar, compact mobile menu, desktop skill table/mobile cards, separate Create/Edit pages, responsive breakpoints, accessible dialogs, and loading/empty/error states are accepted.
 
-**Current task:** Phase 4 — Project Foundation: initialize frontend/backend, local environment, database migrations, linting, and tests.
+**Current task:** Review [Phase 4.1 Project Foundation Plan](phase-4/01-project-foundation-plan.md), then scaffold frontend/backend and verify local startup.
 
 **Deliverables:** accepted architecture overview, accepted data model, API specification, and wireframes.
 
