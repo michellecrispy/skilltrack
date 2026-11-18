@@ -81,3 +81,13 @@ This document records important decisions and their rationale. Decisions marked 
 **Decision:** Include registration, login, and logout. Exclude password reset, account recovery, and email verification from the MVP.
 
 **Rationale:** Keep the first release focused on the essential authentication lifecycle and secure access to private skill data. Additional account workflows can be considered after the core MVP is stable.
+
+## DEC-010 — Soft Productivity Responsive UI
+
+**Status:** Accepted for MVP scope
+
+**Decision:** Use a Soft Productivity visual direction with a persistent desktop sidebar and compact mobile menu. Display skills as a table on desktop and cards on mobile. Use separate Create/Edit pages, accessible permanent-delete confirmation, and explicit loading, empty, success, and error states.
+
+**Rationale:** This supports a calm, approachable learning tracker without sacrificing clarity, keyboard access, or mobile usability. Tablet layouts adapt to available width, and the UI supports 320px viewports without page-level horizontal overflow.
+
+**Detailed contract:** [Phase 3.5 — UI Wireframes and Responsive Behavior](phase-3/05-ui-wireframes.md).
