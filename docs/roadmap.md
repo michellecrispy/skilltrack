@@ -1,6 +1,8 @@
 # Development Roadmap
 
-**Current status:** Phase 4 — Project Foundation (in progress); Phase 4.1 structure plan drafted for review.
+**Current status:** Phase 4 — Project Foundation (in progress); Phase 4.1 completed on 2026-11-27. Phase 4.2 — Backend and Development Foundation is next.
+
+**Current task:** Prepare Phase 4.2 — Backend and Development Foundation, following the completion of the [Phase 4.1 Project Foundation Plan](phase-4/01-project-foundation-plan.md).
 
 This roadmap describes the intended sequence. Dates and completion status will be updated as work progresses; a phase is not complete until its deliverables have been reviewed.
 
@@ -49,13 +51,43 @@ This roadmap describes the intended sequence. Dates and completion status will b
 
 ## Phase 4 — Project Foundation
 
-- [ ] Set up frontend and backend projects
-- [ ] Configure environment variables and local development
-- [ ] Establish linting, formatting, and testing conventions
-- [ ] Add health checks and baseline error handling
-- [ ] Document local setup
+### Phase 4.1 — Initial Project Setup and Verification
 
-**Deliverables:** reproducible development environment and initial automated checks.
+- [x] Set up frontend and backend projects.
+- [x] Create local environment files and development environments.
+- [x] Configure frontend and backend linting.
+- [x] Configure baseline automated testing.
+- [x] Implement and verify the health endpoint.
+- [x] Verify frontend development and production preview.
+- [x] Verify backend runtime and API documentation.
+- [x] Review dependency security and compatibility.
+- [x] Verify repository hygiene.
+- [x] Document local setup and verification.
+- [x] Commit and synchronize the foundation implementation.
+
+**Status:** Completed on 2026-11-27.
+
+**Implementation commit:** `96f7ab5`
+
+**Deliverables:** Verified frontend and backend scaffolds, local development environment, initial automated checks, and foundation documentation.
+
+### Phase 4.2 — Backend and Development Foundation
+
+- [ ] Configure centralized backend application settings.
+- [ ] Integrate environment variables into application configuration.
+- [ ] Configure database connection and session management.
+- [ ] Initialize SQLAlchemy and Alembic migration infrastructure.
+- [ ] Establish baseline API error handling.
+- [ ] Establish code formatting conventions.
+- [ ] Verify database connectivity and migration workflow.
+- [ ] Document reproducible development setup.
+- [ ] Review and verify Phase 4 completion criteria.
+
+**Status:** Not started.
+
+**Deliverables:** Configured backend infrastructure, database migration foundation, consistent error handling, and reproducible development conventions.
+
+**Phase 4 completion gate:** Both Phase 4.1 and Phase 4.2 must be completed and verified before proceeding to Phase 5 — MVP Implementation.
 
 ## Phase 5 — MVP Implementation
 
