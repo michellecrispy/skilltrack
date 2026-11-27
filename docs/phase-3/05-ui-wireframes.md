@@ -12,15 +12,15 @@
 
 ## 2. Screens, routes, and navigation
 
-| Screen | Proposed frontend route | Access | Primary behavior |
-| --- | --- | --- | --- |
-| Login | `/login` | Guest | Email/password, submit; redirect to Dashboard on success |
-| Register | `/register` | Guest | Name/email/password; on success redirect to Login with confirmation, **not** automatic login |
-| Dashboard | `/dashboard` | Authenticated | Exactly three summary statistics, My Skills and Add Skill actions |
-| My Skills | `/skills` | Authenticated | Search, category filter, paginated list, Add Skill |
-| Skill Detail | `/skills/:skillId` | Authenticated owner | Full skill information, Edit, Delete |
-| Create Skill | `/skills/new` | Authenticated | Separate full-page form |
-| Edit Skill | `/skills/:skillId/edit` | Authenticated owner | Separate full-page prefilled form |
+| Screen       | Proposed frontend route | Access              | Primary behavior                                                                             |
+| ------------ | ----------------------- | ------------------- | -------------------------------------------------------------------------------------------- |
+| Login        | `/login`                | Guest               | Email/password, submit; redirect to Dashboard on success                                     |
+| Register     | `/register`             | Guest               | Name/email/password; on success redirect to Login with confirmation, **not** automatic login |
+| Dashboard    | `/dashboard`            | Authenticated       | Exactly three summary statistics, My Skills and Add Skill actions                            |
+| My Skills    | `/skills`               | Authenticated       | Search, category filter, paginated list, Add Skill                                           |
+| Skill Detail | `/skills/:skillId`      | Authenticated owner | Full skill information, Edit, Delete                                                         |
+| Create Skill | `/skills/new`           | Authenticated       | Separate full-page form                                                                      |
+| Edit Skill   | `/skills/:skillId/edit` | Authenticated owner | Separate full-page prefilled form                                                            |
 
 These are frontend route conventions; backend API paths remain under `/api/v1`. Unauthenticated access to protected pages redirects to Login; after successful login, return to a safe local intended route if available, otherwise Dashboard. Authenticated users navigating to Login/Register go to Dashboard. Invalid/non-owned skill IDs show a non-disclosing Not Found state with a route back to My Skills.
 
@@ -59,17 +59,20 @@ The menu button opens a dismissible navigation panel with Dashboard, My Skills, 
 ## 3. Screen-level wireframe contracts
 
 ### Login and Register
+
 - Centered form, explicit field labels, password visibility toggle with accessible label, submit button, and reciprocal Login/Register link.
 - Register has name, email, password; Login has email and password. Registration success navigates to Login with a non-sensitive confirmation.
 - Display safe generic authentication errors; preserve email and name on failed submission, never persist password in localStorage.
 - Password registration rule: 8–128 characters. Do not silently trim passwords. Field errors are associated with their inputs.
 
 ### Dashboard
-- Exactly three core cards: active skills (count of remaining skill records), completed skills (progress 100%), and arithmetic average progress (one decimal when needed).
+
+- Exactly three core cards: total skills (count of all skill records), completed skills (progress 100%), and arithmetic average progress (one decimal when needed).
 - For no skills: `0`, `0`, and `0%`, plus a clear Add Skill call to action.
 - Show a Dashboard heading, View My Skills and Add Skill links. No extra analytics charts.
 
 ### My Skills
+
 - Search by skill name, one built-in category dropdown, Add Skill action, and pagination.
 - Desktop: accessible table with skill name, category, progress as number + bar, and View action; each item leads to its detail page.
 - Mobile: one vertically stacked card per skill, with the same essential fields and View action; never hide information essential to choosing a skill.
@@ -79,11 +82,13 @@ The menu button opens a dismissible navigation panel with Dashboard, My Skills, 
 - Disable Previous/Next appropriately, show current page and total results; an out-of-range page returns an empty list and can offer navigation back to page 1.
 
 ### Skill Detail
+
 - Show skill name, built-in category, current and target proficiency, learning goal, optional deadline (or Not set), progress percentage and progress bar, created/updated metadata where useful.
 - Edit navigates to the separate Edit page. Delete opens a confirmation dialog that names the skill, explains permanent deletion, and defaults focus to Cancel.
 - Cancel/Escape closes dialog without deletion; confirmation disables duplicate clicks while pending. After successful deletion, navigate to My Skills and show success. If API returns 404, show a safe not-found state; network failures keep the dialog/context recoverable.
 
 ### Create / Edit Skill
+
 - Separate pages, not modals. Form fields: required name, category, current level, target level, learning goal; optional deadline; progress integer 0–100 (defaults to 0 for create).
 - Name max 120 and learning goal max 2,000 characters after trimming. Category uses the 11 accepted built-in keys; proficiency uses four accepted keys.
 - Edit loads existing data and shows loading/not-found/error states; a `null` deadline clears the value.
@@ -93,11 +98,11 @@ The menu button opens a dismissible navigation panel with Dashboard, My Skills, 
 
 ## 4. Responsive layout contract
 
-| Viewport | Navigation | Dashboard | Skill listing | Forms |
-| --- | --- | --- | --- | --- |
-| Desktop >=1024px | Persistent left sidebar | Three cards in a row | Accessible table | Centered readable-width page |
-| Tablet 768–1023px | Compact/collapsible navigation | Cards wrap as needed | Table if it fits, otherwise card layout | Responsive single/two-column fields only if readable |
-| Mobile <768px | Menu button and dismissible panel | Three stacked cards | Vertical cards | Single column, full-width primary action |
+| Viewport          | Navigation                        | Dashboard            | Skill listing                           | Forms                                                |
+| ----------------- | --------------------------------- | -------------------- | --------------------------------------- | ---------------------------------------------------- |
+| Desktop >=1024px  | Persistent left sidebar           | Three cards in a row | Accessible table                        | Centered readable-width page                         |
+| Tablet 768–1023px | Compact/collapsible navigation    | Cards wrap as needed | Table if it fits, otherwise card layout | Responsive single/two-column fields only if readable |
+| Mobile <768px     | Menu button and dismissible panel | Three stacked cards  | Vertical cards                          | Single column, full-width primary action             |
 
 - Support viewport widths down to 320px without page-level horizontal overflow.
 - Use responsive container widths, flexible grids, text wrapping for long skill names/goals, and appropriate spacing.
